@@ -6,9 +6,20 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
-
+    void Awake()
+    {
+        if(instance==null)
+        {
+            instance = null;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     public static GameManager Instance
     {
+
         get
         {
             if (instance is null)
@@ -18,10 +29,7 @@ public class GameManager : MonoBehaviour
         }
     }
    
-    void Awake()
-    {
-        instance = this;
-    }
+    
 
 
     public void ChangeSceneSelectChapter(int number)
