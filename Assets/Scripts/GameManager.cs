@@ -21,14 +21,6 @@ public class GameManager : MonoBehaviour
     }
 
 
-    
-
-
-    public void ChangeSceneSelectChapter(int number)
-    {
-        SceneManager.LoadScene(1);
-    }
-
 
     // Start is called before the first frame update
     void Start()
