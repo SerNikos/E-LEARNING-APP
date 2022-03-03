@@ -5,30 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
-    void Awake()
+    public static GameManager Instance { get; private set; }
+    private void Awake()
     {
-        if(instance==null)
+        if (Instance == null) //αν Τρέχει για πρώτη φορά και το Instane δεν υπάρχει
         {
-            instance = null;
+            Instance = this; // Κάνε Instane την current Instance
+            DontDestroyOnLoad(gameObject); //Μη καταστραφεί κατά τη φόρτωση 
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(gameObject); //Αν υπάρχει Instance μη ξαναspawnάρεις την ίδια Instance έτσι ώστε να μέινει μόνο μία
         }
-    }
-    public static GameManager Instance
-    {
 
-        get
-        {
-            if (instance is null)
-                Debug.LogError("Game Manager is NULL");
-
-            return instance;
-        }
     }
-   
+
+
     
 
 
