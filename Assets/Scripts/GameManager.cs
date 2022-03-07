@@ -5,19 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
-
-   
-    void Awake()
+    public static GameManager Instance { get; private set; }
+    private void Awake()
     {
-        instance = this;
+        if (Instance == null) 
+        {
+            Instance = this; 
+            DontDestroyOnLoad(gameObject); 
+        }
+        else
+        {
+            Destroy(gameObject); 
+        }
+
     }
 
-
-    public void ChangeSceneSelectChapter(int number)
-    {
-        SceneManager.LoadScene(1);
-    }
 
 
     // Start is called before the first frame update
