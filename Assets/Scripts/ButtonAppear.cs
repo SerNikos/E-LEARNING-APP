@@ -19,7 +19,7 @@ public class ButtonAppear : MonoBehaviour
 	
 	void Update()
 	{		
-		if(bookObj.currentPage == 0)
+		if(bookObj.currentPage == 1)
 			ClickToAppearLeftButton(true);
 		else
 			ClickToAppearLeftButton(false);
