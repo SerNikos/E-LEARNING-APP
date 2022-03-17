@@ -21,6 +21,27 @@ EditorBuildSettings:
     path: Assets/Scenes/EducationalMaterial/Chapter2.unity
     guid: 4e8f763e6f45d7c448f94e7237fca1a8
   - enabled: 1
+    path: Assets/Scenes/Tests/TestChapter1.unity
+    guid: c5e5338f07e7ee041a00671227c1587f
+  - enabled: 1
+    path: Assets/Scenes/Tests/TestChapter2.unity
+    guid: 1ee24da8644670640a9ac9effcaf4f55
+  - enabled: 1
+    path: Assets/Scenes/Tests/TestChapter3.unity
+    guid: aa29bd566542dde41a235e3661c82eb4
+  - enabled: 1
+    path: Assets/Scenes/Tests/TestFinalRevision.unity
+    guid: 3fdb5e1b5ae2fd24ea388d2c52aa40d8
+  - enabled: 1
+    path: Assets/Scenes/Tests/TestScore.unity
+    guid: 03450675b3b03ee4d87c9a88f2a41371
+  - enabled: 1
+    path: Assets/Scenes/Statistics/Statistic.unity
+    guid: 7855ba17cb07ed84a93dbe51fa3e7333
+  - enabled: 1
     path: Assets/Scenes/EducationalMaterial/Chapter3.unity
     guid: d29267da74273d94e8cc4f80ee3d928c
+  - enabled: 1
+    path: Assets/Scenes/LogIn/LogIn.unity
+    guid: 8262447f682c8104aa430d4602dec914
   m_configObjects: {}

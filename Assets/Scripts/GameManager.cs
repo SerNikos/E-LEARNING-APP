@@ -8,14 +8,14 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     private void Awake()
     {
-        if (Instance == null) //αν Τρέχει για πρώτη φορά και το Instane δεν υπάρχει
+        if (Instance == null) 
         {
-            Instance = this; // Κάνε Instane την current Instance
-            DontDestroyOnLoad(gameObject); //Μη καταστραφεί κατά τη φόρτωση 
+            Instance = this; 
+            DontDestroyOnLoad(gameObject); 
         }
         else
         {
-            Destroy(gameObject); //Αν υπάρχει Instance μη ξαναspawnάρεις την ίδια Instance έτσι ώστε να μέινει μόνο μία
+            Destroy(gameObject); 
         }
 
     }
