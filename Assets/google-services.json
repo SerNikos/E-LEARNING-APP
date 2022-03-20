@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "75243213303",
+    "firebase_url": "https://e-learning-app-b4322-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "e-learning-app-b4322",
+    "storage_bucket": "e-learning-app-b4322.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75243213303:android:25d1c9d4d3aa841c301ef2",
+        "android_client_info": {
+          "package_name": "com.UniWA.ELEARNINGAPP"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "75243213303-j93snhqqn57g3m7057q8nrapdeu48u44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiESTyYya0u8pihiPYuL_8h3dRNzqMwpo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "75243213303-j93snhqqn57g3m7057q8nrapdeu48u44.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
