@@ -368,7 +368,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 246, y: -1270}
+  m_AnchoredPosition: {x: 237, y: -1270}
   m_SizeDelta: {x: 175, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &461812427
@@ -1022,52 +1022,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: bookPages.Array.size
-      value: 37
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: bookPages.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 7000ef5f06dfa8c43aa6a1cde91f38f3, type: 3}
+      objectReference: {fileID: 21300000, guid: 8e03b204e3ea3c14383b0d1e5b02dd40, type: 3}
     - target: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: bookPages.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 90653fcc5be5b8241b376897716f65e9, type: 3}
+      objectReference: {fileID: 21300000, guid: 228e3d882d807304799b9db23f6fd05b, type: 3}
     - target: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: bookPages.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: e544a0025848ef9448413c6292a5a0e2, type: 3}
+      objectReference: {fileID: 21300000, guid: fbbc2c765f560984a98f4936e4ea3b0d, type: 3}
     - target: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: bookPages.Array.data[3]
       value: 
-      objectReference: {fileID: 21300000, guid: 7da2e4ce977f62b419265cc7c88cb9cf, type: 3}
+      objectReference: {fileID: 21300000, guid: ca1786c7dbd691a4fb896b5b22d6f2fc, type: 3}
     - target: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: bookPages.Array.data[4]
       value: 
-      objectReference: {fileID: 21300000, guid: 17ec3d947039a7540bf80c356e5fc3e4, type: 3}
+      objectReference: {fileID: 21300000, guid: da9022c7a15a5914fb0bfd5486694a47, type: 3}
     - target: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: bookPages.Array.data[5]
       value: 
-      objectReference: {fileID: 21300000, guid: 8ad2a1370de4c0e40b59a6dd1d0c5439, type: 3}
+      objectReference: {fileID: 21300000, guid: 197b30cadf09e0a41826df4cd7daaa56, type: 3}
     - target: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: bookPages.Array.data[6]
       value: 
-      objectReference: {fileID: 21300000, guid: 669e5e0c4c6b38947b194486b356e251, type: 3}
+      objectReference: {fileID: 21300000, guid: b1bc8368e59804448a2bbf9d38c5d555, type: 3}
     - target: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: bookPages.Array.data[7]
       value: 
-      objectReference: {fileID: 21300000, guid: 66a37a76cfc1a5148adce82062d3c0f8, type: 3}
+      objectReference: {fileID: 21300000, guid: e750374a40a17884aba75887a8489215, type: 3}
     - target: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: bookPages.Array.data[8]
       value: 
-      objectReference: {fileID: 21300000, guid: 23e5166b9234b274d9e3d9fdf02a1da4, type: 3}
+      objectReference: {fileID: 21300000, guid: d1f7ba8cdcc12f54b8d387e2a41acf36, type: 3}
     - target: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: bookPages.Array.data[9]
       value: 
-      objectReference: {fileID: 21300000, guid: ac39f9bbdbb00f346b0f7d79230a7e66, type: 3}
+      objectReference: {fileID: 21300000, guid: 41f11effafa843e4199e39ff547b457e, type: 3}
     - target: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: bookPages.Array.data[10]
       value: 
-      objectReference: {fileID: 21300000, guid: d6197d6f0f4292c43860429cdaf98a66, type: 3}
+      objectReference: {fileID: 21300000, guid: ab8ae61704c0f53438854382e0136bbf, type: 3}
     - target: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
       propertyPath: bookPages.Array.data[11]
       value: 
@@ -1567,7 +1567,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -234, y: -1268}
+  m_AnchoredPosition: {x: -237, y: -1270}
   m_SizeDelta: {x: 175, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1262798014
