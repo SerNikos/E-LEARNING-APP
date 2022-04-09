@@ -104,6 +104,8 @@ public class AuthManager : MonoBehaviour
             //Now get the result
             User = LoginTask.Result;
             Debug.LogFormat("User signed in successfully: {0} ({1})", User.DisplayName, User.Email);
+            ChangeScene CS = GameObject.Find("Canvas").GetComponent<ChangeScene>();
+            CS.LoadScene("SampleScene");
         }
     }
 
