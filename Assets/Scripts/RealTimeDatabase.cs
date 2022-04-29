@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,26 +9,29 @@ using Firebase.Extensions;
 
 public class RealTimeDatabase : MonoBehaviour
 {
-    List<List<string>> data = new List<List<string>>();
-
-    int counter = 0;
-
     DatabaseReference reference;
+
+    public static List<List<string>> Questions_1 = new List<List<string>>();
+    public static List<List<string>> Questions_2 = new List<List<string>>();
+    public static List<List<string>> Questions_3 = new List<List<string>>();
+
     // Start is called before the first frame update
     void Start()
     {
         reference = FirebaseDatabase.DefaultInstance.RootReference;
+
         ReadData("Questions_1");
         ReadData("Questions_2");
         ReadData("Questions_3");
-
-        DebugData();
     }
 
     public void ReadData(string Questions){
         FirebaseDatabase.DefaultInstance
         .GetReference(Questions)
         .ValueChanged += (object sender, ValueChangedEventArgs e) => {
+            
+            List<List<string>> data = new List<List<string>>();
+
             if (e.DatabaseError != null) {
                 Debug.LogError (e.DatabaseError.Message);
             }
@@ -41,56 +45,84 @@ public class RealTimeDatabase : MonoBehaviour
             if (e.Snapshot != null && e.Snapshot.ChildrenCount > 0) {
 
                 foreach (var childSnapshot in e.Snapshot.Children) {
+
+                    var counter = data.Count;
                     
-                        data.Add(new List<string>());
+                    data.Add(new List<string>());
 
-                        data[counter].Add(counter.ToString());
+                    var index = childSnapshot.Child("index").Value.ToString();
 
-                        if (Questions=="Questions_2" && q2_counter>=0){
+                    data[counter].Add(index);
 
-                            if (childSnapshot.Child("index").Value.ToString()=="13" || childSnapshot.Child("index").Value.ToString()=="14"){
+                    if (Questions=="Questions_2" && q2_counter>=0){
 
-                                var Answer1 = childSnapshot.Child("Answer1").Value.ToString();
-                                Debug.Log(Answer1); 
-                                var Answer2 = childSnapshot.Child("Answer2").Value.ToString();
-                                Debug.Log(Answer2); 
-                                
-                                data[counter].Add(Answer1);
-                                data[counter].Add(Answer2);
-                            }
+                        if (childSnapshot.Child("index").Value.ToString()=="13" || childSnapshot.Child("index").Value.ToString()=="14"){
 
-                            q2_counter++;
-                        }
-                        else{
-
-                            var Answer = childSnapshot.Child("Answer").Value.ToString(); 
-
-                            data[counter].Add(Answer);
+                            var Answer1 = childSnapshot.Child("Answer1").Value.ToString();
+                            var Answer2 = childSnapshot.Child("Answer2").Value.ToString();
+                            
+                            data[counter].Add(Answer1);
+                            data[counter].Add(Answer2);
                         }
 
-                        var Question = childSnapshot.Child("Question").Value.ToString();
-                        var choice1 = childSnapshot.Child("choice1").Value.ToString();
-                        var choice2 = childSnapshot.Child("choice2").Value.ToString();
-                        var choice3 = childSnapshot.Child("choice3").Value.ToString();
-                        var choice4 = childSnapshot.Child("choice4").Value.ToString();
-
-                        data[counter].Add(Question);
-                        data[counter].Add(choice1);
-                        data[counter].Add(choice2);
-                        data[counter].Add(choice3);
-                        data[counter].Add(choice4);
-
-                        counter++;
+                        q2_counter++;
                     }
+                    else{
+
+                        var Answer = childSnapshot.Child("Answer").Value.ToString(); 
+
+                        data[counter].Add(Answer);
+                    }
+
+                    var Question = childSnapshot.Child("Question").Value.ToString();
+                    var choice1 = childSnapshot.Child("choice1").Value.ToString();
+                    var choice2 = childSnapshot.Child("choice2").Value.ToString();
+                    var choice3 = childSnapshot.Child("choice3").Value.ToString();
+                    var choice4 = childSnapshot.Child("choice4").Value.ToString();
+
+                    data[counter].Add(Question);
+                    data[counter].Add(choice1);
+                    data[counter].Add(choice2);
+                    data[counter].Add(choice3);
+                    data[counter].Add(choice4);
                 }
+                if (Questions == "Questions_1"){
+                    AddQuestions1(data);
+                }
+                else if (Questions == "Questions_2"){
+                    AddQuestions2(data);
+                }
+                else if (Questions == "Questions_3"){
+                    AddQuestions3(data);
+                }
+            }
         };
     }
 
-    public void DebugData(){
-        for (int i = 0; i<counter; i++){
-                for (int j = 0; j<data[i].Count; j++){
-                    Debug.Log(data[i][j]);
+    public void AddQuestions1(List<List<string>> data){
+        for (int i = 0; i<data.Count; i++){
+            Questions_1.Add(new List<string>());
+            for (int j = 0; j<data[i].Count; j++){
+                Questions_1[i].Add(data[i][j]);
             }
         }
-    }     
+    }
+
+    public void AddQuestions2(List<List<string>> data){
+        for (int i = 0; i<data.Count; i++){
+            Questions_2.Add(new List<string>());
+            for (int j = 0; j<data[i].Count; j++){
+                Questions_2[i].Add(data[i][j]);
+            }
+        }
+    }
+
+    public void AddQuestions3(List<List<string>> data){
+        for (int i = 0; i<data.Count; i++){
+            Questions_3.Add(new List<string>());
+            for (int j = 0; j<data[i].Count; j++){
+                Questions_3[i].Add(data[i][j]);
+            }
+        }
+    }
 } 
