@@ -64,6 +64,12 @@ public class RealTimeDatabase : MonoBehaviour
                             data[counter].Add(Answer1);
                             data[counter].Add(Answer2);
                         }
+                        else{
+
+                            var Answer = childSnapshot.Child("Answer").Value.ToString(); 
+
+                            data[counter].Add(Answer);
+                        }
 
                         q2_counter++;
                     }

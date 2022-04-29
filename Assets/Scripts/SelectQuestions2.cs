@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random=System.Random;
 
-public class SelectQuestions1 : MonoBehaviour
+public class SelectQuestions2 : MonoBehaviour
 {
     private List<List<string>> data;
 
     // Start is called before the first frame update
     void Start()
     {
-        data = RealTimeDatabase.Questions_1;
+        data = RealTimeDatabase.Questions_2;
 
         //QuestionSelectorTrueFalse();
         //QuestionSelectorMultipleChoice();
@@ -19,12 +19,12 @@ public class SelectQuestions1 : MonoBehaviour
     public void QuestionSelectorTrueFalse(){
         Random random = new Random();
 
-        string firstQ = random.Next(0,6).ToString();
+        string firstQ = random.Next(0,8).ToString();
 
-        string secondQ = random.Next(0,6).ToString();
+        string secondQ = random.Next(0,8).ToString();
 
         while (secondQ == firstQ){
-            secondQ = random.Next(0,6).ToString();
+            secondQ = random.Next(0,8).ToString();
         }
 
         for (int i = 0; i<data.Count; i++){
@@ -38,24 +38,33 @@ public class SelectQuestions1 : MonoBehaviour
     public void QuestionSelectorMultipleChoice(){
         Random random = new Random();
 
-        string firstQ = random.Next(6,13).ToString();
+        string firstQ = random.Next(8,13).ToString();
 
-        string secondQ = random.Next(6,13).ToString();
+        string secondQ = random.Next(8,13).ToString();
 
         while (secondQ == firstQ){
-            secondQ = random.Next(6,13).ToString();
-        }
-
-        string thirdQ = random.Next(6,13).ToString();
-
-        while (thirdQ == firstQ || thirdQ == secondQ){
-            thirdQ = random.Next(6,13).ToString();
+            secondQ = random.Next(8,13).ToString();
         }
 
         for (int i = 0; i<data.Count; i++){
-            if (data[i][0] == firstQ || data[i][0] == secondQ || data[i][0] == thirdQ){
+            if (data[i][0] == firstQ || data[i][0] == secondQ){
                 //function to replace text on test
                 Debug.Log(data[i][0]);
+            }
+        }
+    }
+
+    public void QuestionSelectorMultipleChoice2Answers(){
+        Random random = new Random();
+
+        string firstQ = random.Next(13,15).ToString();
+
+        for (int i = 0; i<data.Count; i++){
+            if (data[i][0] == firstQ){
+                //function to replace text on test
+                Debug.Log(data[i][0]);
+                Debug.Log(data[i][1]);
+                Debug.Log(data[i][2]);
             }
         }
     }

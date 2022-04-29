@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random=System.Random;
 
-public class SelectQuestions1 : MonoBehaviour
+public class SelectQuestions3 : MonoBehaviour
 {
     private List<List<string>> data;
 
     // Start is called before the first frame update
     void Start()
     {
-        data = RealTimeDatabase.Questions_1;
+        data = RealTimeDatabase.Questions_3;
 
         //QuestionSelectorTrueFalse();
         //QuestionSelectorMultipleChoice();
@@ -38,18 +38,18 @@ public class SelectQuestions1 : MonoBehaviour
     public void QuestionSelectorMultipleChoice(){
         Random random = new Random();
 
-        string firstQ = random.Next(6,13).ToString();
+        string firstQ = random.Next(6,12).ToString();
 
-        string secondQ = random.Next(6,13).ToString();
+        string secondQ = random.Next(6,12).ToString();
 
         while (secondQ == firstQ){
-            secondQ = random.Next(6,13).ToString();
+            secondQ = random.Next(6,12).ToString();
         }
 
-        string thirdQ = random.Next(6,13).ToString();
+        string thirdQ = random.Next(6,12).ToString();
 
         while (thirdQ == firstQ || thirdQ == secondQ){
-            thirdQ = random.Next(6,13).ToString();
+            thirdQ = random.Next(6,12).ToString();
         }
 
         for (int i = 0; i<data.Count; i++){
