@@ -2937,6 +2937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 271808286}
   - component: {fileID: 271808285}
+  - component: {fileID: 271808287}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -2970,6 +2971,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &271808287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271808284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91cff5ac9ff8b184a92b4b7920a50d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &326841919
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,7 +3354,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1193576100}
   toggleTransition: 1
   graphic: {fileID: 910077049}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 335301225}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6534,7 +6547,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1574266479}
   toggleTransition: 1
   graphic: {fileID: 253442815}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 1381754248}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7114,7 +7127,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1697310739}
   toggleTransition: 1
   graphic: {fileID: 341509222}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 1381754248}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -8331,7 +8344,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1773204392}
   toggleTransition: 1
   graphic: {fileID: 634371998}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 335301225}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -8843,7 +8856,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 924022915}
   toggleTransition: 1
   graphic: {fileID: 6084399}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 1381754248}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -9283,7 +9296,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1572499043}
   toggleTransition: 1
   graphic: {fileID: 712957395}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 335301225}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -10181,7 +10194,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1725844949}
   toggleTransition: 1
   graphic: {fileID: 396036136}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 1381754248}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -13387,7 +13400,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 579571837}
   toggleTransition: 1
   graphic: {fileID: 2050515124}
-  m_Group: {fileID: 0}
+  m_Group: {fileID: 335301225}
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
