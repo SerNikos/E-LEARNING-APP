@@ -15,6 +15,21 @@ public class RealTimeDatabase : MonoBehaviour
     public static List<List<string>> Questions_2 = new List<List<string>>();
     public static List<List<string>> Questions_3 = new List<List<string>>();
 
+    /*public static RealTimeDatabase Instance { get; private set; }
+    private void Awake()
+    {
+        if (Instance == null) 
+        {
+            Instance = this; 
+            DontDestroyOnLoad(gameObject); 
+        }
+        else
+        {
+            Destroy(gameObject); 
+        }
+
+    }*/
+
     // Start is called before the first frame update
     void Start()
     {

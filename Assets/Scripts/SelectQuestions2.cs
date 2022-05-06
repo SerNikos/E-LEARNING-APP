@@ -12,6 +12,8 @@ public class SelectQuestions2 : MonoBehaviour
     [SerializeField]
     private TMP_Text Question1,Question2,Question3,Question4,Question5,choice3_1,choice3_2,choice3_3,choice3_4,choice4_1,choice4_2,choice4_3,choice4_4,choice5_1,choice5_2,choice5_3,choice5_4;
 
+    public static String Answer1,Answer2,Answer3,Answer4,Answer5_1,Answer5_2;
+
     void Awake() {
         Question1 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question1").GetComponent<TMP_Text>();
         Question2 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question2").GetComponent<TMP_Text>();
@@ -19,20 +21,20 @@ public class SelectQuestions2 : MonoBehaviour
         Question4 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question4").GetComponent<TMP_Text>();
         Question5 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question5").GetComponent<TMP_Text>();
 
-        choice3_1 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question3/ToggleGroup3/Toggle/Answer1").GetComponent<TMP_Text>();
-        choice3_2 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question3/ToggleGroup3/Toggle/Answer2").GetComponent<TMP_Text>();
-        choice3_3 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question3/ToggleGroup3/Toggle/Answer3").GetComponent<TMP_Text>();
-        choice3_4 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question3/ToggleGroup3/Toggle/Answer4").GetComponent<TMP_Text>();
+        choice3_1 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question3/ToggleGroup3/Toggle1/Answer1").GetComponent<TMP_Text>();
+        choice3_2 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question3/ToggleGroup3/Toggle2/Answer2").GetComponent<TMP_Text>();
+        choice3_3 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question3/ToggleGroup3/Toggle3/Answer3").GetComponent<TMP_Text>();
+        choice3_4 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question3/ToggleGroup3/Toggle4/Answer4").GetComponent<TMP_Text>();
 
-        choice4_1 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question4/ToggleGroup4/Toggle/Answer1").GetComponent<TMP_Text>();
-        choice4_2 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question4/ToggleGroup4/Toggle/Answer2").GetComponent<TMP_Text>();
-        choice4_3 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question4/ToggleGroup4/Toggle/Answer3").GetComponent<TMP_Text>();
-        choice4_4 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question4/ToggleGroup4/Toggle/Answer4").GetComponent<TMP_Text>();
+        choice4_1 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question4/ToggleGroup4/Toggle1/Answer1").GetComponent<TMP_Text>();
+        choice4_2 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question4/ToggleGroup4/Toggle2/Answer2").GetComponent<TMP_Text>();
+        choice4_3 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question4/ToggleGroup4/Toggle3/Answer3").GetComponent<TMP_Text>();
+        choice4_4 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question4/ToggleGroup4/Toggle4/Answer4").GetComponent<TMP_Text>();
 
-        choice5_1 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question5/ToggleGroup5/Toggle/Answer1").GetComponent<TMP_Text>();
-        choice5_2 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question5/ToggleGroup5/Toggle/Answer2").GetComponent<TMP_Text>();
-        choice5_3 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question5/ToggleGroup5/Toggle/Answer3").GetComponent<TMP_Text>();
-        choice5_4 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question5/ToggleGroup5/Toggle/Answer4").GetComponent<TMP_Text>();
+        choice5_1 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question5/ToggleGroup5/Toggle1/Answer1").GetComponent<TMP_Text>();
+        choice5_2 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question5/ToggleGroup5/Toggle2/Answer2").GetComponent<TMP_Text>();
+        choice5_3 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question5/ToggleGroup5/Toggle3/Answer3").GetComponent<TMP_Text>();
+        choice5_4 = GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question5/ToggleGroup5/Toggle4/Answer4").GetComponent<TMP_Text>();
     }
 
     // Start is called before the first frame update
@@ -60,9 +62,11 @@ public class SelectQuestions2 : MonoBehaviour
             if (data[i][0] == firstQ){
                 //function to replace text on test
                 Question1.text = data[i][2];
+                Answer1 = data[i][1];
             }
             else if (data[i][0] == secondQ) {
                 Question2.text = data[i][2];
+                Answer2 = data[i][1];
             }
         }
     }
@@ -86,6 +90,7 @@ public class SelectQuestions2 : MonoBehaviour
                 choice3_2.text = data[i][4];
                 choice3_3.text = data[i][5];
                 choice3_4.text = data[i][6];
+                Answer3 = data[i][1];
             }
             else if (data[i][0] == secondQ){
                 Question4.text = data[i][2];
@@ -93,6 +98,7 @@ public class SelectQuestions2 : MonoBehaviour
                 choice4_2.text = data[i][4];
                 choice4_3.text = data[i][5];
                 choice4_4.text = data[i][6];
+                Answer4 = data[i][1];
             }
         }
     }
@@ -105,11 +111,13 @@ public class SelectQuestions2 : MonoBehaviour
         for (int i = 0; i<data.Count; i++){
             if (data[i][0] == firstQ){
                 //function to replace text on test
-                Question5.text = data[i][2];
-                choice5_1.text = data[i][3];
-                choice5_2.text = data[i][4];
-                choice5_3.text = data[i][5];
-                choice5_4.text = data[i][6];
+                Question5.text = data[i][3];
+                choice5_1.text = data[i][4];
+                choice5_2.text = data[i][5];
+                choice5_3.text = data[i][6];
+                choice5_4.text = data[i][7];
+                Answer5_1 = data[i][1];
+                Answer5_1 = data[i][2];
             }
         }
     }

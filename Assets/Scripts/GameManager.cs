@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    //TMP_Text Answer1;
+
     public static GameManager Instance { get; private set; }
     private void Awake()
     {
