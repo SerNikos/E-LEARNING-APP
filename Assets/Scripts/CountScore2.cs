@@ -7,7 +7,7 @@ using System;
 
 public class CountScore2 : MonoBehaviour
 {
-    private int score = 0;
+    public static int score = 0;
 
     public void getScore() {   
         //Question 1 
