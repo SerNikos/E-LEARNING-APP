@@ -4,10 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using Firebase.Auth;
+using Firebase.Database;
 
 public class CountScore2 : MonoBehaviour
 {
+    DatabaseReference reference;
+
+    public FirebaseAuth auth = FirebaseAuth.DefaultInstance;
+
+    string user;
+
     public static int score = 0;
+
+    void Start() {
+        reference = FirebaseDatabase.DefaultInstance.RootReference;
+        user = auth.CurrentUser.UserId.ToString();
+    }
 
     public void getScore() {   
         //Question 1 
@@ -99,5 +112,9 @@ public class CountScore2 : MonoBehaviour
         SelectQuestions2.Answer5_2 == GameObject.Find("Canvas/Panel/Scroll View/Viewport/Content/Grid/Question5/ToggleGroup5/Toggle4/Answer4").GetComponent<TMP_Text>().text) {
             score += 20;
         }
+        WriteData(score);
+    }
+    public void WriteData (int score) {
+        reference.Child("Users").Child(user).Child("score_2").SetRawJsonValueAsync(score.ToString());
     }
 }

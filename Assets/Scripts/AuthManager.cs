@@ -1,11 +1,16 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using Firebase;
 using Firebase.Auth;
 using TMPro;
+using Firebase.Database;
+using Firebase.Extensions;
+
 
 public class AuthManager : MonoBehaviour
 {
+    DatabaseReference reference;
     //Firebase variables
     [Header("Firebase")]
     public DependencyStatus dependencyStatus;
@@ -17,7 +22,6 @@ public class AuthManager : MonoBehaviour
     public TMP_InputField emailLoginField;
     public TMP_InputField passwordLoginField;
 
-
     //Register variables
     [Header("Register")]
     public TMP_InputField usernameRegisterField;
@@ -26,8 +30,9 @@ public class AuthManager : MonoBehaviour
     public TMP_InputField passwordRegisterVerifyField;
     public TMP_Text warningRegisterText;
 
-    void Awake()
+    void Start()
     {
+        reference = FirebaseDatabase.DefaultInstance.RootReference;
         //Check that all of the necessary dependencies for Firebase are present on the system
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
         {
@@ -42,6 +47,36 @@ public class AuthManager : MonoBehaviour
                 Debug.LogError("Could not resolve all Firebase dependencies: " + dependencyStatus);
             }
         });
+    }
+
+    public class newUser {
+        public string username;
+        public int score_1;
+        public int score_2;
+        public int score_3;
+        public int score_all;
+
+        public newUser() {
+            score_1 = 0;
+            score_2 = 0;
+            score_3 = 0;
+            score_all = 0;
+        }
+
+        public newUser(string username) {
+            this.username = username;
+            score_1 = 0;
+            score_2 = 0;
+            score_3 = 0;
+            score_all = 0;
+        }
+    }
+
+    private void writeNewUser(string username, string uid) {
+        newUser user = new newUser(username);
+        string json = JsonUtility.ToJson(user);
+
+        reference.Child("Users").Child(uid).SetRawJsonValueAsync(json);
     }
 
     private void InitializeFirebase()
@@ -178,6 +213,9 @@ public class AuthManager : MonoBehaviour
                         warningRegisterText.text = "Username Set Failed!";
                     }
                 }
+                writeNewUser(_username, auth.CurrentUser.UserId.ToString());
+                ChangeScene CS = GameObject.Find("Canvas").GetComponent<ChangeScene>();
+                CS.LoadScene("SampleScene");
             }
         }
     }

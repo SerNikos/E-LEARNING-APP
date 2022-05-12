@@ -6,14 +6,19 @@ using TMPro;
 using System;
 using Firebase;
 using Firebase.Database;
+using Firebase.Auth;
 
 public class CountScoreFinal : MonoBehaviour
 {
+    public FirebaseAuth auth = FirebaseAuth.DefaultInstance;
+
+    string user;
+
     public static int score = 0;
     DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
 
-    void WriteNewScore(int score) {
-        //var DBTask = reference.Child("Score").SetValueAsync(score);
+    void Start() {
+        user = auth.CurrentUser.UserId.ToString();
     }
 
     public void getScore() {   
@@ -189,6 +194,9 @@ public class CountScoreFinal : MonoBehaviour
             score += 10;
         }
 
-        WriteNewScore(score);
+        WriteData(score);
+    }
+    public void WriteData (int score) {
+        reference.Child("Users").Child(user).Child("score_all").SetRawJsonValueAsync(score.ToString());
     }
 }
