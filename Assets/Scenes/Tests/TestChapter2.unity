@@ -4666,6 +4666,7 @@ GameObject:
   - component: {fileID: 993338454}
   - component: {fileID: 993338453}
   - component: {fileID: 993338455}
+  - component: {fileID: 993338456}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -4728,6 +4729,18 @@ MonoBehaviour:
   choice5_2: {fileID: 0}
   choice5_3: {fileID: 0}
   choice5_4: {fileID: 0}
+--- !u!114 &993338456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993338452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150ef23cbafa8184d83c0912c6c2b2ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1005793922
 GameObject:
   m_ObjectHideFlags: 0
@@ -8159,6 +8172,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 993338456}
+        m_TargetAssemblyTypeName: CountScore2, Assembly-CSharp
+        m_MethodName: getScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 993338453}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: LoadScene

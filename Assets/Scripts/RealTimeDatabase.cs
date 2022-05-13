@@ -35,6 +35,8 @@ public class RealTimeDatabase : MonoBehaviour
     {
         reference = FirebaseDatabase.DefaultInstance.RootReference;
         
+        Debug.Log("Database Read");
+
         ReadData("Questions_1");
         ReadData("Questions_2");
         ReadData("Questions_3");

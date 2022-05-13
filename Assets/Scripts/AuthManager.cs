@@ -219,4 +219,26 @@ public class AuthManager : MonoBehaviour
             }
         }
     }
+
+    private void ForgotPassword(string _email) {
+        auth.SendPasswordResetEmailAsync(_email).ContinueWith(task => {
+            if (task.IsCanceled) {
+                Debug.LogError("SendPasswordResetEmailAsync was canceled.");
+                return;
+            }
+            if (task.IsFaulted) {
+                Debug.LogError("SendPasswordResetEmailAsync encountered an error: " + task.Exception);
+                return;
+            }
+
+            Debug.Log("Password reset email sent successfully.");
+        });
+        
+    }
+
+    public void ForgotPasswordButton()
+    {
+        //Call the ForgotPassword coroutine passing the email and password
+        ForgotPassword(emailLoginField.text);
+    }
 }

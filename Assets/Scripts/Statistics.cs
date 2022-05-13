@@ -16,7 +16,7 @@ public class Statistics : MonoBehaviour
     public FirebaseAuth auth;  
 
     [SerializeField]
-    private TMP_Text Score1,Score2,Score3,ScoreAll;
+    private TMP_Text Profile_Name,Score1,Score2,Score3,ScoreAll,Average;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +42,9 @@ public class Statistics : MonoBehaviour
           DataSnapshot snapshot = task.Result;
             // Do something with snapshot...
 
+            Profile_Name = GameObject.Find("Canvas/Panel/Profile_Name").GetComponent<TMP_Text>();
+            Profile_Name.text = snapshot.Child("username").Value.ToString();
+
             Score1 = GameObject.Find("Canvas/Panel/Score_1").GetComponent<TMP_Text>();
             Score1.text = snapshot.Child("score_1").Value.ToString()+"/100";
 
@@ -53,6 +56,11 @@ public class Statistics : MonoBehaviour
 
             ScoreAll = GameObject.Find("Canvas/Panel/Score_all").GetComponent<TMP_Text>();
             ScoreAll.text = snapshot.Child("score_all").Value.ToString()+"/100";
+
+            double avg = (Convert.ToDouble(snapshot.Child("score_1").Value) + Convert.ToDouble(snapshot.Child("score_2").Value) + Convert.ToDouble(snapshot.Child("score_3").Value) + Convert.ToDouble(snapshot.Child("score_all").Value)) / 4.0;
+
+            Average = GameObject.Find("Canvas/Panel/Average").GetComponent<TMP_Text>();
+            Average.text = avg.ToString()+"/100";
         }
       });
     }
