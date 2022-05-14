@@ -241,4 +241,17 @@ public class AuthManager : MonoBehaviour
         //Call the ForgotPassword coroutine passing the email and password
         ForgotPassword(emailLoginField.text);
     }
+
+    void SignOut() {
+        auth.SignOut();
+        Debug.Log("user signed out");
+        ChangeScene CS = GameObject.Find("Canvas").GetComponent<ChangeScene>();
+        CS.LoadScene("Login");
+    }
+
+    public void SignOutButton()
+    {
+        //Call the signout coroutine passing the email and password
+        SignOut();
+    }
 }
