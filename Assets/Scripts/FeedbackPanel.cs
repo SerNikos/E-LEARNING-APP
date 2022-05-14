@@ -10,7 +10,7 @@ public class FeedbackPanel : MonoBehaviour
     void Start()
     {
         //logic here we need to find the grade varable from the database
-        if (grade > 50)
+        if (grade >= 50)
         {
             goodpanel.SetActive(true);
         }
