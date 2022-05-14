@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class FeedbackPanel : MonoBehaviour
 {
-    public int grade;
     public GameObject goodpanel, badpanel;
-  
-    void Start()
-    {
-        //logic here we need to find the grade varable from the database
+
+    public void ShowFeedbackPanel (int grade) {
         if (grade >= 50)
         {
             if (badpanel)
